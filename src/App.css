@@ -83,6 +83,12 @@ header p {
     background: rgba(34, 42, 61, 0.6);
     border: 1px solid #3C4A46;
     border-radius: 12px;
+    cursor: pointer;
+}
+
+.tenzies-btn:hover {
+    border: 1px solid #57F1DB;
+    animation: pulse-glow 3s ease-in-out infinite;
 }
 
 /* ROLL BUTTON */
