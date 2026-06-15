@@ -5,6 +5,18 @@ import timerIcon from './assets/timer-icon.svg'
 
 function App() {
 
+  function tenziesBtnEls() {
+    let btnsEl = []
+    for(let i = 1; i < 11; i++) {
+        const randomNum = Math.ceil(Math.random() * 6)
+        btnsEl.push(
+          <button className='tenzies-btn'>{randomNum}</button>
+        ) 
+    }
+
+    return btnsEl
+  }
+
   return (
     <div className='container'>
       <header>
@@ -16,7 +28,7 @@ function App() {
         </p>
       </header>
       <main>
-        <div className='rolls-timer-container'>
+        <section className='rolls-timer-container'>
           <div>
             <img src={rollsIcon} alt='roll icon' />
             Rolls:  
@@ -27,7 +39,11 @@ function App() {
             Time:  
             <span>00:01</span>
           </div>
-        </div>
+        </section>
+        <section className='tenzies-btns-container'>
+          {tenziesBtnEls()}
+        </section>
+
       </main>
     </div>
   )
