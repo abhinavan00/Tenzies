@@ -29,3 +29,36 @@ header p {
 /* MAIN */
 
 /* ROLLS AND TIMER SECTION */
+.rolls-timer-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 2.5em;
+}
+
+.rolls-timer-container div {
+    font-family: 'JetBrains Mono';
+    color: #BACAC5;
+    font-size: .875em;
+    width: 150px;
+    height: 50px;
+    background: rgba(34, 42, 61, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid #3C4A46;
+    border-radius: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .85em;
+    
+}
+
+.rolls-timer-container div.timer {
+    width: 180px;
+}
+
+.rolls-timer-container div span {
+    font-family: 'Space Grotesk';
+    color: #57F1DB;
+    font-size: 1.25em;
+}
