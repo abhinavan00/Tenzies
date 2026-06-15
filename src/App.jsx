@@ -4,6 +4,7 @@ import rollsIcon from './assets/rolls-icon.svg'
 import timerIcon from './assets/timer-icon.svg'
 
 function App() {
+  const [rolls, setRolls] = useState(0)
 
   function tenziesBtnEls() {
     let btnsEl = []
@@ -15,6 +16,10 @@ function App() {
     }
 
     return btnsEl
+  }
+
+  function handleRollClick() {
+    setRolls(prevRolls => prevRolls + 1)
   }
 
   return (
@@ -32,7 +37,7 @@ function App() {
           <div>
             <img src={rollsIcon} alt='roll icon' />
             Rolls:  
-            <span>0</span>
+            <span>{rolls}</span>
           </div>
           <div className='timer'>
             <img src={timerIcon} alt='roll icon' />
@@ -43,7 +48,7 @@ function App() {
         <section className='tenzies-btns-container'>
           {tenziesBtnEls()}
         </section>
-        <button className='roll-btn' >Roll</button>
+        <button className='roll-btn' onClick={handleRollClick} >Roll</button>
       </main>
     </div>
   )
