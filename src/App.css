@@ -92,8 +92,34 @@ header p {
     height: 65px;
     font-family: 'Space Grotesk';
     font-size: 1.5em;
-    margin: 2em auto 0;
+    margin: 2em auto;
     background: #57F1DB;
     border: none;
     border-radius: 12px;
+    cursor: pointer;
 }
+
+.roll-btn:hover {
+    /* box-shadow: 0 0 20px #00f2fe, 0 0 40px #4facfe; */
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 242, 254, 0.4), 
+                    0 0 10px rgba(0, 242, 254, 0.2);
+    }
+    50% {
+        /* Shadows expand out and soften at the midway point */
+        box-shadow: 0 0 20px rgba(0, 242, 254, 0.8), 
+                    0 0 30px rgba(79, 172, 254, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 242, 254, 0.4), 
+                    0 0 10px rgba(0, 242, 254, 0.2);
+    }
+}
+
+
+
+
