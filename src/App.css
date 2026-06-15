@@ -86,3 +86,14 @@ header p {
 }
 
 /* ROLL BUTTON */
+.roll-btn {
+    display: block;
+    width: 320px;
+    height: 65px;
+    font-family: 'Space Grotesk';
+    font-size: 1.5em;
+    margin: 2em auto 0;
+    background: #57F1DB;
+    border: none;
+    border-radius: 12px;
+}

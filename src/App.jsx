@@ -43,7 +43,7 @@ function App() {
         <section className='tenzies-btns-container'>
           {tenziesBtnEls()}
         </section>
-
+        <button className='roll-btn' >Roll</button>
       </main>
     </div>
   )
