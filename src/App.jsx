@@ -1,21 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import rollsIcon from './assets/rolls-icon.svg'
 import timerIcon from './assets/timer-icon.svg'
+import TenziesBtnEls from './components/TenziesBtnEls.jsx'
 
 function App() {
   const [rolls, setRolls] = useState(0)
+  const [timer, setTimer] = useState(0)
+  const [tenziesBtns, setTenziesBtns] = useState(() => TenziesBtnEls())
 
-  function tenziesBtnEls() {
-    let btnsEl = []
-    for(let i = 1; i < 11; i++) {
-        const randomNum = Math.ceil(Math.random() * 6)
-        btnsEl.push(
-          <button className='tenzies-btn'>{randomNum}</button>
-        ) 
-    }
+  useEffect(() => {
+    // Interval ID
+    const IntervalId = setInterval(() => {
+      setTimer(prevTime => prevTime + 1)
+    }, 1000)
+    
+    // Claer interval Id
+    return () => clearInterval(IntervalId)
+  }, [])
 
-    return btnsEl
+  // Formatt the Timer
+  function formatTime(timeInSeconds) {
+    const mins = Math.floor(timeInSeconds / 60)
+    const secs = timeInSeconds % 60
+    return `${String(mins).padStart(2, 0)}:${String(secs).padStart(2, 0)}`
   }
 
   function handleRollClick() {
@@ -42,11 +50,11 @@ function App() {
           <div className='timer'>
             <img src={timerIcon} alt='roll icon' />
             Time:  
-            <span>00:01</span>
+            <span>{formatTime(timer)}</span>
           </div>
         </section>
         <section className='tenzies-btns-container'>
-          {tenziesBtnEls()}
+          {tenziesBtns}
         </section>
         <button className='roll-btn' onClick={handleRollClick} >Roll</button>
       </main>
